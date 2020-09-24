@@ -24,6 +24,16 @@ A C++ library for performing fluid-structure interaction using OpenFOAM's fluid 
 
 
 
+digraph G {
+    main -> parse -> execute;
+    main -> init;
+    main -> cleanup;
+    execute -> make_string;
+    execute -> printf
+    init -> make_string;
+    main -> printf;
+    execute -> compare;
+}
 
 
 
