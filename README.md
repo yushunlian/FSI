@@ -6,3 +6,8 @@ A C++ library for performing fluid-structure interaction using OpenFOAM's fluid 
 * **MDOFBodyMotionSolver** holds a class for mesh motion solver. This class calculates and applies displacement to the grid in the nearfield of the structure. The class holds the patchs, interpolation distance and scale used to calculate the grid displacement.   
 
 * **MDOFSolver** contains classes that are used to solve the MDOF systme given the forces and structural properties. This classes hold the MDOFBodyMotion object numerical scheme used to advace the solution of the structural systme like CentralDifference, CrackNicolsen, ...
+
+
+**Note**
+- There are some modifications on the OpenFOAM-dev vertion for those clases. Future development need to acomodate those chages and fix if there is any backward compatability issue. The class and inheritance structure in **MDOFBodyMotionSolver** classes have changed and future development need to be adapted accodigly. 
+
