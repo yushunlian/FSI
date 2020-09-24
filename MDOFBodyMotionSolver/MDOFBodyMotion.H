@@ -22,7 +22,7 @@ License
     along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
 
 Class
-    Foam::sixDoFRigidBodyMotionSolver
+    Foam::MDOFBodyMotionSolver
 
 Description
     6-DoF solid-body mesh motion solver for an fvMesh.
@@ -31,15 +31,15 @@ Description
     the object surface.
 
 SourceFiles
-    sixDoFRigidBodyMotionSolver.C
+    MDOFBodyMotionSolver.C
 
 \*---------------------------------------------------------------------------*/
 
-#ifndef sixDoFRigidBodyMotionSolver_H
-#define sixDoFRigidBodyMotionSolver_H
+#ifndef MDOFBodyMotionSolver_H
+#define MDOFBodyMotionSolver_H
 
 #include "displacementMotionSolver.H"
-#include "sixDoFRigidBodyMotion.H"
+#include "MDOFBodyMotion.H"
 #include "HashPtrTable.H"
 #include "OFstream.H"
 
@@ -49,17 +49,17 @@ namespace Foam
 {
 
 /*---------------------------------------------------------------------------*\
-        Class sixDoFRigidBodyMotionSolver Declaration
+        Class MDOFBodyMotionSolver Declaration
 \*---------------------------------------------------------------------------*/
 
-class sixDoFRigidBodyMotionSolver
+class MDOFBodyMotionSolver
 :
     public displacementMotionSolver
 {
     // Private data
 
         //- Six dof motion object
-        sixDoFRigidBodyMotion motion_;
+        MDOFBodyMotion motion_;
 
         wordReList patches_;
 
@@ -99,13 +99,13 @@ class sixDoFRigidBodyMotionSolver
     // Private Member Functions
 
         //- Disallow default bitwise copy construct
-        sixDoFRigidBodyMotionSolver
+        MDOFBodyMotionSolver
         (
-            const sixDoFRigidBodyMotionSolver&
+            const MDOFBodyMotionSolver&
         );
 
         //- Disallow default bitwise assignment
-        void operator=(const sixDoFRigidBodyMotionSolver&);
+        void operator=(const MDOFBodyMotionSolver&);
 
         //- Writes the status of the solution
 	void writeDisplacement();
@@ -113,13 +113,13 @@ class sixDoFRigidBodyMotionSolver
 public:
 
     //- Runtime type information
-    TypeName("sixDoFRigidBodyMotion");
+    TypeName("MDOFBodyMotion");
 
 
     // Constructors
 
         //- Construct from polyMesh and IOdictionary
-        sixDoFRigidBodyMotionSolver
+        MDOFBodyMotionSolver
         (
             const polyMesh&,
             const IOdictionary& dict
@@ -127,7 +127,7 @@ public:
 
 
     //- Destructor
-    ~sixDoFRigidBodyMotionSolver();
+    ~MDOFBodyMotionSolver();
 
 
     // Member Functions

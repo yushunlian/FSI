@@ -23,7 +23,7 @@ License
 
 \*---------------------------------------------------------------------------*/
 
-#include "sixDoFRigidBodyMotionSolver.H"
+#include "MDOFBodyMotionSolver.H"
 #include "addToRunTimeSelectionTable.H"
 #include "polyMesh.H"
 #include "pointPatchDist.H"
@@ -36,12 +36,12 @@ License
 
 namespace Foam
 {
-    defineTypeNameAndDebug(sixDoFRigidBodyMotionSolver, 0);
+    defineTypeNameAndDebug(MDOFBodyMotionSolver, 0);
 
     addToRunTimeSelectionTable
     (
         motionSolver,
-        sixDoFRigidBodyMotionSolver,
+        MDOFBodyMotionSolver,
         dictionary
     );
 }
@@ -49,7 +49,7 @@ namespace Foam
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
-Foam::sixDoFRigidBodyMotionSolver::sixDoFRigidBodyMotionSolver
+Foam::MDOFBodyMotionSolver::MDOFBodyMotionSolver
 (
     const polyMesh& mesh,
     const IOdictionary& dict
@@ -61,7 +61,7 @@ Foam::sixDoFRigidBodyMotionSolver::sixDoFRigidBodyMotionSolver
         coeffDict(),
         IOobject
         (
-            "sixDoFRigidBodyMotionState",
+            "MDOFBodyMotionState",
             mesh.time().timeName(),
             "uniform",
             mesh
@@ -70,7 +70,7 @@ Foam::sixDoFRigidBodyMotionSolver::sixDoFRigidBodyMotionSolver
         (
             IOobject
             (
-                "sixDoFRigidBodyMotionState",
+                "MDOFBodyMotionState",
                 mesh.time().timeName(),
                 "uniform",
                 mesh,
@@ -153,20 +153,20 @@ Foam::sixDoFRigidBodyMotionSolver::sixDoFRigidBodyMotionSolver
 
 // * * * * * * * * * * * * * * * * Destructor  * * * * * * * * * * * * * * * //
 
-Foam::sixDoFRigidBodyMotionSolver::~sixDoFRigidBodyMotionSolver()
+Foam::MDOFBodyMotionSolver::~MDOFBodyMotionSolver()
 {}
 
 
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
 Foam::tmp<Foam::pointField>
-Foam::sixDoFRigidBodyMotionSolver::curPoints() const
+Foam::MDOFBodyMotionSolver::curPoints() const
 {
     return points0() + pointDisplacement_.primitiveField();
 }
 
 
-void Foam::sixDoFRigidBodyMotionSolver::solve()
+void Foam::MDOFBodyMotionSolver::solve()
 {
     const Time& t = mesh().time();
 
@@ -256,7 +256,7 @@ void Foam::sixDoFRigidBodyMotionSolver::solve()
 }
 
 
-bool Foam::sixDoFRigidBodyMotionSolver::writeObject
+bool Foam::MDOFBodyMotionSolver::writeObject
 (
     IOstream::streamFormat fmt,
     IOstream::versionNumber ver,
@@ -268,7 +268,7 @@ bool Foam::sixDoFRigidBodyMotionSolver::writeObject
     (
         IOobject
         (
-            "sixDoFRigidBodyMotionState",
+            "MDOFBodyMotionState",
             mesh().time().timeName(),
             "uniform",
             mesh(),
@@ -283,7 +283,7 @@ bool Foam::sixDoFRigidBodyMotionSolver::writeObject
 }
 
 
-bool Foam::sixDoFRigidBodyMotionSolver::read()
+bool Foam::MDOFBodyMotionSolver::read()
 {
     if (displacementMotionSolver::read())
     {
@@ -298,7 +298,7 @@ bool Foam::sixDoFRigidBodyMotionSolver::read()
 }
 
 
-void Foam::sixDoFRigidBodyMotionSolver::writeDisplacement()
+void Foam::MDOFBodyMotionSolver::writeDisplacement()
 {
     // adjust file streams
     if (Pstream::master())
