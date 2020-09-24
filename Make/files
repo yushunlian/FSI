@@ -1,0 +1,35 @@
+MDOFBodyMotion/MDOFBodyMotion.C
+MDOFBodyMotion/MDOFBodyMotionIO.C
+MDOFBodyMotion/MDOFBodyMotionState.C
+MDOFBodyMotion/MDOFBodyMotionStateIO.C
+
+restraints = MDOFBodyMotion/restraints
+
+$(restraints)/MDOFBodyMotionRestraint/MDOFBodyMotionRestraint.C
+$(restraints)/MDOFBodyMotionRestraint/MDOFBodyMotionRestraintNew.C
+$(restraints)/linearAxialAngularSpring/linearAxialAngularSpring.C
+$(restraints)/linearSpring/linearSpring.C
+$(restraints)/sphericalAngularSpring/sphericalAngularSpring.C
+$(restraints)/tabulatedAxialAngularSpring/tabulatedAxialAngularSpring.C
+$(restraints)/linearDamper/linearDamper.C
+$(restraints)/sphericalAngularDamper/sphericalAngularDamper.C
+
+constraints = MDOFBodyMotion/constraints
+
+$(constraints)/MDOFBodyMotionConstraint/MDOFBodyMotionConstraint.C
+$(constraints)/MDOFBodyMotionConstraint/MDOFBodyMotionConstraintNew.C
+$(constraints)/axis/MDOFBodyMotionAxisConstraint.C
+$(constraints)/line/MDOFBodyMotionLineConstraint.C
+$(constraints)/orientation/MDOFBodyMotionOrientationConstraint.C
+$(constraints)/plane/MDOFBodyMotionPlaneConstraint.C
+$(constraints)/point/MDOFBodyMotionPointConstraint.C
+
+MDOFBodyMotionSolver/MDOFBodyMotionSolver.C
+
+MDOFSolvers/MDOFSolver/MDOFSolver.C
+MDOFSolvers/MDOFSolver/newSixDoFSolver.C
+MDOFSolvers/symplectic/symplectic.C
+MDOFSolvers/CrankNicolson/CrankNicolson.C
+MDOFSolvers/Newmark/Newmark.C
+
+LIB = $(FOAM_LIBBIN)/libMDOFBodyMotion
