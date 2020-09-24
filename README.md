@@ -9,5 +9,5 @@ A C++ library for performing fluid-structure interaction using OpenFOAM's fluid 
 
 
 **Note**
-- There are some modifications on the OpenFOAM-dev vertion for those clases. Future development need to acomodate those chages and fix if there is any backward compatability issue. The class and inheritance structure in **MDOFBodyMotionSolver** classes have changed and future development need to be adapted accodigly. 
+- There are some modifications on the OpenFOAM-dev version for some of the clases. Future development need to acomodate these chages and fix if there is any backward compatability issue. The change includes class and inheritance structure for clases in **MDOFBodyMotionSolver** directory.
 
