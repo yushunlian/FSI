@@ -8,6 +8,20 @@ A C++ library for performing fluid-structure interaction using OpenFOAM's fluid 
 * **MDOFSolver** contains classes that are used to solve the MDOF systme given the forces and structural properties. This classes hold the MDOFBodyMotion object numerical scheme used to advace the solution of the structural systme like CentralDifference, CrackNicolsen, ...
 
 
+
+## Plan
+
+
+
+
+
+
+
+
+
+
+
+
 **Note**
 - There are some modifications on the OpenFOAM-dev version for some of the clases. Future development need to acomodate these chages and fix if there is any backward compatability issue. The change includes class and inheritance structure for clases in **MDOFBodyMotionSolver** directory.
 
