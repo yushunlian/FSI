@@ -23,10 +23,10 @@ Task List
 - [ ] Implement a MDOF solver in **MDOFSolver** classes. The solver uses explicity/implicit technique to advance the lamped-mass system for the current time step. The load for the solver comes from the forces calculated on a patches that surounds each lamped mass. Each mass need to have it's own surounding patch look into the new update in [OpenFoam-8](https://github.com/OpenFOAM/OpenFOAM-8/blob/master/src/rigidBodyDynamics/rigidBodyModel/rigidBodyModel.H). The forces on each patch is extracted using the 'forces' post processing tool of OpenFOAM look the implementation in [sixDoFRigidBodyMotionSolver.solve()](https://github.com/OpenFOAM/OpenFOAM-8/blob/master/src/sixDoFRigidBodyMotion/sixDoFRigidBodyMotionSolver/sixDoFRigidBodyMotionSolver.C) function. Follow the following procedure to create the patches for each floor. 
   - First, create an "\*stl" surface deviding each floor for the building as a separate file and define a boundary condition for each in the corresponding velocity and pressure field files. 
   - List the patches in [dynamicMeshDict](https://github.com/OpenFOAM/OpenFOAM-8/blob/master/tutorials/incompressible/pimpleFoam/RAS/wingMotion/wingMotion2D_pimpleFoam/constant/dynamicMeshDict) dictionary so that the motionSolver reads them. 
-  - Create a separate forces function object in the [sixDoFRigidBodyMotionSolver.solve()](https://github.com/OpenFOAM/OpenFOAM-8/blob/master/src/sixDoFRigidBodyMotion/sixDoFRigidBodyMotionSolver/sixDoFRigidBodyMotionSolver.C) file as 
+  - Create a separate forces function object for each patch in the [sixDoFRigidBodyMotionSolver.solve()](https://github.com/OpenFOAM/OpenFOAM-8/blob/master/src/sixDoFRigidBodyMotion/sixDoFRigidBodyMotionSolver/sixDoFRigidBodyMotionSolver.C) file and feed to *MDOFSolver.solve(args)* function as 
   ```cpp
   
-        List<dictionary> forcesDicts(patches_.size());
+        dictionary forcesDicts(patches_.size());
         
         forAll(patches_, i)
         {
