@@ -1,0 +1,4 @@
+mDoFSystemState/mDoFSystemState.C
+mDoFSystemControl/mDoFSystemControl.C
+
+LIB = $(FOAM_LIBBIN)/libmDoFSystemState
