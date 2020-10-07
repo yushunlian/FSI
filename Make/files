@@ -1,3 +1,4 @@
+
 mDoFSystemMotion/mDoFSystemMotion.C
 mDoFSystemMotion/mDoFSystemMotionIO.C
 mDoFSystemMotion/mDoFSystemMotionState.C
@@ -31,5 +32,8 @@ mDoFSolvers/mDoFSolver/mDoFSolverNew.C
 mDoFSolvers/symplectic/symplectic.C
 mDoFSolvers/CrankNicolson/CrankNicolson.C
 mDoFSolvers/Newmark/Newmark.C
+
+mDoFSystemState/mDoFSystemState.C
+mDoFSystemControl/mDoFSystemControl.C
 
 LIB = $(FOAM_LIBBIN)/libmDoFSystemMotion

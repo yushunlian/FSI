@@ -1,1 +1,0 @@
-../sixDoFRigidBodyState/sixDoFRigidBodyState.C

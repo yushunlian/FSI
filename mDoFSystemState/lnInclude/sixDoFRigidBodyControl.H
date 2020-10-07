@@ -1,1 +1,0 @@
-../sixDoFRigidBodyControl/sixDoFRigidBodyControl.H
