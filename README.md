@@ -11,6 +11,8 @@ A C++ library for performing fluid-structure interaction using OpenFOAM's fluid 
 
 * **mDoFSystemState** Writes the mDoF motion state.
 
+* **trush** Contains old files which have been deleted.
+
 **Order of calling**
 - *dynamicMesh.update()* -> *dynamicMotionSolverFvMesh.update()* -> *motionSolver.newPoints()* -> *displacementMotionSolver* -> *mDoFSystemMotionSolver.solve()* -> *mDoFSystemMotion.update(args)* -> *mDoFSolver.solve(args)*
 
