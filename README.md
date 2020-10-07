@@ -7,6 +7,10 @@ A C++ library for performing fluid-structure interaction using OpenFOAM's fluid 
 
 * **mDoFSolver** contains classes that are used to solve the MDOF systme given the forces and structural properties. This classes hold the MDOFBodyMotion object numerical scheme used to advace the solution of the structural systme like CentralDifference, CrackNicolsen, ...
 
+* **mDoFSystemControl** Convergence control based on the mDoF motion state. The body linear and angular velocities are averaged over a specified time window and compared to specified velocity convergence criteria and the run stopped after writing the current time results, if the criteria are met. 
+
+* **mDoFSystemState** Writes the mDoF motion state.
+
 **Order of calling**
 - *dynamicMesh.update()* -> *dynamicMotionSolverFvMesh.update()* -> *motionSolver.newPoints()* -> *displacementMotionSolver* -> *mDoFSystemMotionSolver.solve()* -> *mDoFSystemMotion.update(args)* -> *mDoFSolver.solve(args)*
 
