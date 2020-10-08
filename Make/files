@@ -4,27 +4,6 @@ mDoFSystemMotion/mDoFSystemMotionIO.C
 mDoFSystemMotion/mDoFSystemMotionState.C
 mDoFSystemMotion/mDoFSystemMotionStateIO.C
 
-restraints = mDoFSystemMotion/restraints
-
-$(restraints)/mDoFSystemMotionRestraint/mDoFSystemMotionRestraint.C
-$(restraints)/mDoFSystemMotionRestraint/mDoFSystemMotionRestraintNew.C
-$(restraints)/linearAxialAngularSpring/linearAxialAngularSpring.C
-$(restraints)/linearSpring/linearSpring.C
-$(restraints)/sphericalAngularSpring/sphericalAngularSpring.C
-$(restraints)/tabulatedAxialAngularSpring/tabulatedAxialAngularSpring.C
-$(restraints)/linearDamper/linearDamper.C
-$(restraints)/sphericalAngularDamper/sphericalAngularDamper.C
-
-constraints = mDoFSystemMotion/constraints
-
-$(constraints)/mDoFSystemMotionConstraint/mDoFSystemMotionConstraint.C
-$(constraints)/mDoFSystemMotionConstraint/mDoFSystemMotionConstraintNew.C
-$(constraints)/axis/mDoFSystemMotionAxisConstraint.C
-$(constraints)/line/mDoFSystemMotionLineConstraint.C
-$(constraints)/orientation/mDoFSystemMotionOrientationConstraint.C
-$(constraints)/plane/mDoFSystemMotionPlaneConstraint.C
-$(constraints)/point/mDoFSystemMotionPointConstraint.C
-
 mDoFSystemMotionSolver/mDoFSystemMotionSolver.C
 
 mDoFSolvers/mDoFSolver/mDoFSolver.C
